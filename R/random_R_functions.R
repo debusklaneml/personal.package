@@ -11,7 +11,7 @@
 
 csv_only <- function(df = FALSE) {
   tempcsv = dir(pattern=".csv", all.files = T)
-  csv = map(set_names(tempcsv, tempcsv), read_csv)
+  csv = purrr::map(purrr::set_names(tempcsv, tempcsv), readr::read_csv)
   if (df) {
     list2env(csv, .GlobalEnv)
     message("All csv files are now objects")
@@ -33,7 +33,7 @@ csv_only <- function(df = FALSE) {
 
 xlsx_only <- function(df = FALSE) {
   tempxlsx = dir(pattern=".xlsx", all.files = T)
-  xlsx <- map(set_names(tempxlsx, tempxlsx), read_xlsx)
+  xlsx <- purrr::map(purrr::set_names(tempxlsx, tempxlsx), readxl::read_xlsx)
   if (df) {
     list2env(xlsx, .GlobalEnv)
     message("All xlsx files are now objects")
@@ -56,8 +56,8 @@ xlsx_only <- function(df = FALSE) {
 import_all <- function(df = FALSE) {
   tempcsv = dir(pattern=".csv", all.files = T)
   tempxlsx = dir(pattern=".xlsx", all.files = T)
-  csv <- map(set_names(tempcsv, tempcsv), read_csv)
-  xlsx <- map(set_names(tempxlsx, tempxlsx), read_xlsx)
+  csv <- purrr::map(purrr::set_names(tempcsv, tempcsv), readr::read_csv)
+  xlsx <- purrr::map(purrr::set_names(tempxlsx, tempxlsx), readxl::read_xlsx)
   if (df) {
     list2env(csv, .GlobalEnv)
     list2env(xlsx, .GlobalEnv)
