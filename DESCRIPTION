@@ -1,0 +1,17 @@
+Package: personal.package
+Title: A set of personal functions for my own use. 
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Les",
+           family = "DeBusk-Lane",
+           role = c("aut", "cre"),
+           email = "mldebusklane@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package currently seeks to easily import any number of csv or xlsx files that are in the parent directory.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Import:
+    tidyverse,
+    readxl
