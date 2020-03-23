@@ -1,6 +1,6 @@
 Package: personal.package
 Title: A set of personal functions for my own use. 
-Version: 0.0.0.9000
+Version: 0.0.0.9000 
 Authors@R: 
     person(given = "Les",
            family = "DeBusk-Lane",
